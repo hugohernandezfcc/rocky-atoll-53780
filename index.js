@@ -1,6 +1,6 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 
 var app = express();
 var server = require('http').Server(app);
@@ -14,16 +14,11 @@ app.get('/',function(req, res){
 io.on('connection', function(socket){
 
 	console.log('Alguien se conectó con el socket!');
+	socket.emit('messages', "Hola me llamo heroku y estas conectado conmigo!");
 });
 
 
 server.listen(PORT, function() {
-	console.log('listing 8080 port and server running');
+	console.log('listing PORT port and server running');
 });
 
-// express()
-//   .use(express.static(path.join(__dirname, 'public')))
-//   .set('views', path.join(__dirname, 'views'))
-//   .set('view engine', 'ejs')
-//   .get('/', (req, res) => res.render('pages/index'))
-//   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
