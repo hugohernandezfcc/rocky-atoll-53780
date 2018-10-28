@@ -17,7 +17,7 @@ io.on('connection', function(socket){
 });
 
 
-server.listen(process.ENV.PORT, function() {
+server.listen(PORT, function() {
 	console.log('listing 8080 port and server running');
 });
 
