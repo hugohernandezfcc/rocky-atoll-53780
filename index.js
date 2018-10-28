@@ -7,7 +7,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server, { origins: '*:*'});
 
 app.get('/',function(req, res){
-	res.status(200).send("Hola mundos! :::::" + process.ENV.PORT);
+	res.status(200).send("Hola mundos! :::::" + PORT);
 });
 
 
