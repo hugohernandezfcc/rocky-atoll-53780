@@ -9,7 +9,7 @@ var io = require('socket.io')(server, { origins: '*:*'});
 app.get('/',function(req, res){
 	res.status(200).send("Hola mundos! :::::" + PORT);
 });
-
+ 
 
 io.on('connection', function(socket){
 
