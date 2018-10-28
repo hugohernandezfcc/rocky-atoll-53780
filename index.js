@@ -12,12 +12,13 @@ var io = require('socket.io')(server, { origins: '*:*'});
 app.get('/',function(req, res){
 	res.status(200).send("Hola mundos! :::::" + PORT);
 });
- 
+
+var counter = 0;
 
 io.on('connection', (socket) => {
   console.log('Client connected');
-
-  io.emit('notice', "Client connected");
+  counter++;
+  io.emit('notice', "Client connected: " + counter);
   socket.on('disconnect', () => console.log('Client disconnected'));
 });
 
