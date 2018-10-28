@@ -7,11 +7,12 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server, { origins: '*:*'});
 
 app.get('/',function(req, res){
-	res.status(200).send("Hola mundos!");
+	res.status(200).send("Hola mundos! :::::" + process.ENV.PORT);
 });
 
 
 io.on('connection', function(socket){
+
 	console.log('Alguien se conectó con el socket!');
 });
 
